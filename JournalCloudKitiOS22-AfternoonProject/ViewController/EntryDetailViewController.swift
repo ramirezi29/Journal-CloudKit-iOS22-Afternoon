@@ -76,7 +76,6 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
         
         navigationController?.popViewController(animated: true)
     }
-    
 }
 
 extension EntryDetailViewController {

@@ -30,8 +30,20 @@ class EntryTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
+    override var isSelected: Bool {
+        didSet {
+            if self.isSelected {
+                self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+                self.contentView.alpha = 0.3
+            } else {
+                self.transform = CGAffineTransform.identity
+                self.contentView.alpha = 1.0
+            }
+        }
+    }
 }
+

@@ -56,4 +56,13 @@ struct Constants {
     static let timestampKey = "timestamp"
 }
 
-
+extension Entry: Equatable {
+    static func == (lhs: Entry, rhs: Entry) -> Bool {
+        if lhs.title != rhs.title {return false}
+        if lhs.textBody != rhs.textBody {return false}
+        if lhs.timestamp != rhs.timestamp {return false}
+        if lhs.ckRecordID != rhs.ckRecordID {return false}
+        
+        return true
+    }
+}

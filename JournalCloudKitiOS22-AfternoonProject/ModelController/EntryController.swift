@@ -22,7 +22,7 @@ class EntryController {
     let privateDatabase = CKContainer.default().privateCloudDatabase
     
     // MARK: - Save
-     func saveEntry(with entry: Entry, completion: @escaping (Bool) -> Void) {
+    func saveEntry(with entry: Entry, completion: @escaping (Bool) -> Void) {
         let entryRecord = CKRecord(enty: entry)
         privateDatabase.save(entryRecord) { (record, error) in
             if let error = error {
@@ -58,7 +58,7 @@ class EntryController {
     }
     
     // MARK: - Update
-     func updateEntry(entry: Entry, title: String, textBody: String, completion: @escaping (Bool) -> Void) {
+    func updateEntry(entry: Entry, title: String, textBody: String, completion: @escaping (Bool) -> Void) {
         entry.title = title
         entry.textBody = textBody
         let record = CKRecord(enty: entry)
@@ -85,7 +85,7 @@ class EntryController {
                 completion(nil)
                 return
             }
-            guard let records = records else {return}
+            guard let records = records else {completion(nil); return}
             let entries = records.compactMap{Entry(ckRecord: $0)}
             self.entries = entries
             completion(entries)

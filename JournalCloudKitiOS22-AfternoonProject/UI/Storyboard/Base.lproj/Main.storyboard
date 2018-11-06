@@ -29,21 +29,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(time)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yN-w2-CCx">
-                                                    <rect key="frame" x="304" y="11" width="46" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(title)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Opd-sB-0if">
+                                                    <rect key="frame" x="10" y="10" width="41" height="23.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(title)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Opd-sB-0if">
-                                                    <rect key="frame" x="26" y="10" width="41" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(time)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yN-w2-CCx">
+                                                    <rect key="frame" x="298" y="10.5" width="46" height="22.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Opd-sB-0if" firstAttribute="top" secondItem="nOb-Rc-DWI" secondAttribute="top" constant="10" id="38l-ns-WFW"/>
+                                                <constraint firstItem="2yN-w2-CCx" firstAttribute="leading" secondItem="Opd-sB-0if" secondAttribute="trailing" constant="247" id="4UH-io-Pce"/>
+                                                <constraint firstItem="2yN-w2-CCx" firstAttribute="centerY" secondItem="Opd-sB-0if" secondAttribute="centerY" id="WlV-LP-mAk"/>
+                                                <constraint firstAttribute="bottom" secondItem="Opd-sB-0if" secondAttribute="bottom" constant="10" id="jLA-jW-UgS"/>
+                                                <constraint firstItem="Opd-sB-0if" firstAttribute="leading" secondItem="nOb-Rc-DWI" secondAttribute="leading" constant="10" id="kjg-Cm-wCL"/>
+                                                <constraint firstItem="2yN-w2-CCx" firstAttribute="bottom" secondItem="nOb-Rc-DWI" secondAttribute="bottomMargin" id="lG8-Ec-9aj"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="timeLabel" destination="2yN-w2-CCx" id="Q7w-fl-n6w"/>

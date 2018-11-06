@@ -14,9 +14,9 @@
 		47C20DB62190F6130045F596 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C20DB52190F6130045F596 /* CloudKit.framework */; };
 		47C20DB82190F6490045F596 /* EntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C20DB72190F6490045F596 /* EntryModel.swift */; };
 		47C20DBA2190F6560045F596 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C20DB92190F6560045F596 /* EntryController.swift */; };
-		47C20DBC2190F6740045F596 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C20DBB2190F6740045F596 /* EntryViewController.swift */; };
-		47C20DBE2190F6F50045F596 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C20DBD2190F6F50045F596 /* EntryTableViewCell.swift */; };
 		47C20DC02190F98F0045F596 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C20DBF2190F98F0045F596 /* EntryDetailViewController.swift */; };
+		47C9099C2191499F004FC025 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C9099B2191499F004FC025 /* EntryTableViewCell.swift */; };
+		47C9099E219149BF004FC025 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C9099D219149BF004FC025 /* EntryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,9 +30,9 @@
 		47C20DB52190F6130045F596 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		47C20DB72190F6490045F596 /* EntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryModel.swift; sourceTree = "<group>"; };
 		47C20DB92190F6560045F596 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
-		47C20DBB2190F6740045F596 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryViewController.swift; path = ../../../../../../../../EntryViewController.swift; sourceTree = "<group>"; };
-		47C20DBD2190F6F50045F596 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryTableViewCell.swift; path = ../../../../../../../../../EntryTableViewCell.swift; sourceTree = "<group>"; };
 		47C20DBF2190F98F0045F596 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
+		47C9099B2191499F004FC025 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
+		47C9099D219149BF004FC025 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,7 @@
 		47C20DB12190F5E00045F596 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				47C20DBB2190F6740045F596 /* EntryViewController.swift */,
+				47C9099D219149BF004FC025 /* EntryViewController.swift */,
 				47C20DBF2190F98F0045F596 /* EntryDetailViewController.swift */,
 			);
 			path = ViewController;
@@ -133,7 +133,7 @@
 		47C20DB32190F5F60045F596 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				47C20DBD2190F6F50045F596 /* EntryTableViewCell.swift */,
+				47C9099B2191499F004FC025 /* EntryTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,8 +226,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				47C20DBA2190F6560045F596 /* EntryController.swift in Sources */,
-				47C20DBE2190F6F50045F596 /* EntryTableViewCell.swift in Sources */,
-				47C20DBC2190F6740045F596 /* EntryViewController.swift in Sources */,
+				47C9099C2191499F004FC025 /* EntryTableViewCell.swift in Sources */,
+				47C9099E219149BF004FC025 /* EntryViewController.swift in Sources */,
 				47C20DB82190F6490045F596 /* EntryModel.swift in Sources */,
 				47C20DC02190F98F0045F596 /* EntryDetailViewController.swift in Sources */,
 				47C20D9B2190F58B0045F596 /* AppDelegate.swift in Sources */,

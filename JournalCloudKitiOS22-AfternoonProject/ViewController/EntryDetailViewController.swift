@@ -31,16 +31,58 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Actions
     @IBAction func saveButtonTapped(_ sender: Any) {
-    EntryController.shared.saveEntry(with: <#T##Entry#>, completion: <#T##(Bool) -> Void#>)
+        guard let title = titleTextField.text,
+            let textBody = textBodyTextField.text else {return}
+        textBodyTextField.resignFirstResponder()
+        
+        if let entry = entry {
+            EntryController.shared.updateEntry(entry: entry, title: title, textBody: textBody) { (success) in
+                if success {
+                    print("Success Updating Entry")
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                } else {
+                    self.presentAlertController()
+                    print("error with the upating the data")
+                    return
+                }
+            }
+        } else {
+            EntryController.shared.createEntryWith(title: title, textBody: textBody) { (success) in
+                if success {
+                    print("\n\nCreating new entry successful\n\n")
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                } else {
+                    self.presentAlertController()
+                    print("💀 \n\nError creating new entry\n\n")
+                    return
+                }
+            }
+        }
     }
     
     @IBAction func clearButtonTapped(_ sender: Any) {
         titleTextField.text = ""
-        titleTextField.text = ""
+        textBodyTextField.text = ""
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
+}
+
+extension EntryDetailViewController {
+    func presentAlertController() {
+        let alertController = UIAlertController(title: "💀 There was a networking error 💀", message: "Please don't give me a bad review on the App Store", preferredStyle: .alert)
+        
+        // NOTE: - Dismiss
+        let dismissAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        
+        alertController.addAction(dismissAction)
+        present(alertController, animated: true)
+    }
 }

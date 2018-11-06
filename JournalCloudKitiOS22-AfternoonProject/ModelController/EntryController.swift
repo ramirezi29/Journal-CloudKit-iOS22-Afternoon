@@ -92,19 +92,4 @@ class EntryController {
         }
     }
 }
-//extension EntryController {
-//
-//    func presentAlertController() {
-//
-//
-//        let alertController = UIAlertController(title: "Eroor", message: "💀 There was an error saving your entry", preferredStyle: .alert)
-//
-//        let dismissAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
-//
-//            alertController.addAction(dismissAction)
-//
-//
-//
-//    }
-//}
 

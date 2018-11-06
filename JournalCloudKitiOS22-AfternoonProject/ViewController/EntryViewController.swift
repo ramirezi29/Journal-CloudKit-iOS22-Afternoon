@@ -20,13 +20,20 @@ class EntryViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.tableViewOutlet.dataSource = self
         activityIndicator.isHidden = true
         activityView.backgroundColor = UIColor.clear
+        activityIndicator.color = UIColor(red: 0.3, green: 165/255, blue: 0.09, alpha: 1)
         
         // MARK: - Fetch
         
         EntryController.shared.fetchEntries { (entries) in
             if (entries != nil) {
                 DispatchQueue.main.async {
+                    self.activityIndicator.isHidden = false
+                    self.activityIndicator.startAnimating()
+                }
+                DispatchQueue.main.async {
                     self.tableViewOutlet.reloadData()
+                    self.activityIndicator.isHidden = true
+                    self.activityIndicator.stopAnimating()
                 }
             } else {
                 self.presentAlertController()
@@ -73,8 +80,14 @@ extension EntryViewController {
     @IBAction func refreshButtonTapped(_ sender: Any) {
         EntryController.shared.fetchEntries { (entries) in
             if (entries != nil) {
+                self.activityIndicator.isHidden = false
+                self.activityIndicator.startAnimating()
+                
                 DispatchQueue.main.async {
                     self.tableViewOutlet.reloadData()
+                    
+                    self.activityIndicator.isHidden = true
+                    self.activityIndicator.stopAnimating()
                 }
             } else {
                 self.presentAlertController()

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class EntryDetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var clearButton: UIButton!
@@ -43,6 +44,7 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
                         self.navigationController?.popViewController(animated: true)
                     }
                 } else {
+                    AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
                     self.presentAlertController()
                     print("error with the upating the data")
                     return
@@ -56,6 +58,7 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
                         self.navigationController?.popViewController(animated: true)
                     }
                 } else {
+                    AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
                     self.presentAlertController()
                     print("💀 \n\nError creating new entry\n\n")
                     return
@@ -70,6 +73,7 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
+        
         navigationController?.popViewController(animated: true)
     }
     

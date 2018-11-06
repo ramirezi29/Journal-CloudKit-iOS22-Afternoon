@@ -29,26 +29,37 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(title)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Opd-sB-0if">
-                                                    <rect key="frame" x="10" y="10" width="41" height="23.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(time)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yN-w2-CCx">
-                                                    <rect key="frame" x="298" y="10.5" width="46" height="22.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="263" translatesAutoresizingMaskIntoConstraints="NO" id="itX-Li-T5C">
+                                                    <rect key="frame" x="7" y="10" width="361" height="23.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(title)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Opd-sB-0if">
+                                                            <rect key="frame" x="0.0" y="0.0" width="41" height="23.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="(time)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yN-w2-CCx">
+                                                            <rect key="frame" x="304" y="0.0" width="57" height="23.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Opd-sB-0if" firstAttribute="top" secondItem="itX-Li-T5C" secondAttribute="top" id="1jn-1E-Ggt"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Opd-sB-0if" secondAttribute="bottom" id="JRm-e0-Hfa"/>
+                                                        <constraint firstAttribute="bottom" secondItem="2yN-w2-CCx" secondAttribute="bottom" id="srt-Gc-npv"/>
+                                                        <constraint firstItem="2yN-w2-CCx" firstAttribute="top" secondItem="itX-Li-T5C" secondAttribute="top" id="u0W-wp-cQB"/>
+                                                    </constraints>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Opd-sB-0if" firstAttribute="top" secondItem="nOb-Rc-DWI" secondAttribute="top" constant="10" id="38l-ns-WFW"/>
-                                                <constraint firstItem="2yN-w2-CCx" firstAttribute="leading" secondItem="Opd-sB-0if" secondAttribute="trailing" constant="247" id="4UH-io-Pce"/>
-                                                <constraint firstItem="2yN-w2-CCx" firstAttribute="centerY" secondItem="Opd-sB-0if" secondAttribute="centerY" id="WlV-LP-mAk"/>
-                                                <constraint firstAttribute="bottom" secondItem="Opd-sB-0if" secondAttribute="bottom" constant="10" id="jLA-jW-UgS"/>
-                                                <constraint firstItem="Opd-sB-0if" firstAttribute="leading" secondItem="nOb-Rc-DWI" secondAttribute="leading" constant="10" id="kjg-Cm-wCL"/>
-                                                <constraint firstItem="2yN-w2-CCx" firstAttribute="bottom" secondItem="nOb-Rc-DWI" secondAttribute="bottomMargin" id="lG8-Ec-9aj"/>
+                                                <constraint firstAttribute="bottom" secondItem="itX-Li-T5C" secondAttribute="bottom" constant="10" id="2Hq-IZ-GyD"/>
+                                                <constraint firstItem="itX-Li-T5C" firstAttribute="leading" secondItem="nOb-Rc-DWI" secondAttribute="leading" constant="7" id="3e6-E9-7US"/>
+                                                <constraint firstItem="itX-Li-T5C" firstAttribute="top" secondItem="nOb-Rc-DWI" secondAttribute="top" constant="10" id="3uA-cE-EGA"/>
+                                                <constraint firstAttribute="trailing" secondItem="itX-Li-T5C" secondAttribute="trailing" constant="7" id="Lae-Il-hvw"/>
+                                                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Opd-sB-0if" secondAttribute="trailing" constant="327" id="UkU-YG-Sbt"/>
+                                                <constraint firstAttribute="trailing" secondItem="2yN-w2-CCx" secondAttribute="trailing" constant="7" id="ZNU-vT-SDQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -134,9 +145,12 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pa9-nL-FFR">
-                                <rect key="frame" x="165" y="78" width="45" height="30"/>
+                                <rect key="frame" x="153" y="78" width="69" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="(clear)"/>
+                                <state key="normal" title="Clear Text">
+                                    <color key="titleColor" red="0.45161473751068115" green="0.95542412996292114" blue="0.24975380301475525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="clearButtonTapped:" destination="KLS-ik-sz1" eventType="touchUpInside" id="l6a-Bk-Lc6"/>
                                 </connections>
